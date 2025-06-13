@@ -1,0 +1,14 @@
+name: PR action with Gradle
+
+on:
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    uses:
+      mandraghen/gh-actions-template/.github/workflows/build-gradle.yaml@main
+    with:
+      upload-jar: false
+    secrets: inherit

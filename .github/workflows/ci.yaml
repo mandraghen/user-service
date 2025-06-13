@@ -1,0 +1,33 @@
+name: CI action with Gradle
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    uses:
+      mandraghen/gh-actions-template/.github/workflows/build-gradle.yaml@main
+    secrets: inherit
+  dependency-submission:
+    permissions:
+      contents: write
+    uses:
+      mandraghen/gh-actions-template/.github/workflows/dependency-submission.yaml@main
+  dockerize:
+    needs: build
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+    uses:
+      mandraghen/gh-actions-template/.github/workflows/dockerize.yaml@main
+#
+#  local-deploy:
+#    needs: dockerize
+#    uses: ./.github/workflows/promote.yml
+#    with:
+#      environment: local
+#    secrets: inherit
