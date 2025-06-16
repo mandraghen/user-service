@@ -1,6 +1,6 @@
 spring:
   application:
-  name: sb-template
+  name: user-service
   docker:
     compose:
       enabled: false
