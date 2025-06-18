@@ -1,26 +1,7 @@
-# Spring Boot Template
+# User-service
 
-This repository serves as a template for creating new projects based on Spring Boot. It is designed to help developers quickly set up microservices or similar components.
-
-## Features
-
-- **Spring Boot 3.x**: Leverages the latest features of Spring Boot for rapid development.
-- **Java 21**: Utilizes the latest Java version with virtual threads enabled for improved concurrency.
-- **Gradle Build System**: Simplifies dependency management and build processes.
-- **Docker Support**: Includes a `Dockerfile` and `compose.yaml` for containerized deployment.
-- **Hibernate JPA**: Configured for efficient database interaction with PostgreSQL.
-- **Profiles**: Supports multiple Spring profiles (`local`, `cds`) for environment-specific configurations.
-- **Optimized Docker Images**: Uses layered JARs and Class Data Sharing (CDS) for faster startup and efficient builds.
-- **RESTful API**: Standard endpoints for managing Employee resource and related entities.
-- **DTO and Mapper Pattern**: Clean separation between API and persistence layers using DTOs and mappers.
-- **Custom Exception Handling**: Example of centralized exception handling with ControllerExceptionHandler.
-- **Repository Abstraction**: Example of generic repository with ScopedRepository interface for reusable repository logic, extended by concrete repositories.
-- **Unit and Integration Testing**: JUnit 5 tests with Mockito and Testcontainers for robust test coverage.
-- **Lombok**: Reduces boilerplate code for models and DTOs.
-- **Testcontainers**: Enables integration tests with containerized PostgreSQL.
-- **Validation**: Some example of input validation for DTOs.
-- **Layered Architecture**: Clear separation of controller, service, repository, and domain layers.
-- **OpenAPI/Swagger Integration**: Provides API documentation for easy exploration and testing of endpoints.
+This project provides a resource server for managing users, built with Spring Boot and Gradle. 
+It follows best practices for microservices architecture and is designed to be easily deployable using Docker.
 
 ## Prerequisites
 
@@ -34,8 +15,8 @@ This repository serves as a template for creating new projects based on Spring B
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/mandraghen/spring-boot-template.git
-cd spring-boot-template
+git clone https://github.com/mandraghen/user-service.git
+cd user-service
 ```
 
 ### Build the Project
@@ -87,25 +68,10 @@ The `compose.yaml` file defines the services required for the application, inclu
 
 The `Dockerfile` is optimized for layered builds and CDS. It includes a builder stage for extracting dependencies and a runtime stage for efficient startup.
 
-## Dependencies
-
-Key dependencies used in this project:
-
-- `spring-boot-starter-data-jpa`: For database interaction.
-- `spring-boot-starter-web`: For building RESTful APIs.
-- `lombok`: For reducing boilerplate code.
-- `spring-boot-docker-compose`: For Docker Compose integration.
-- `testcontainers`: For running integration tests with containerized dependencies.
-
 ## Profiles
 
 - **local**: Default profile for local development.
 - **cds**: Profile optimized for Class Data Sharing (CDS).
-
-## Testing
-- **Unit Tests**: Located in src/test/java/**/unit, covering services, populators, and exception handlers.
-- **Integration Tests**: Located in src/test/java/**/integration Use Testcontainers for real database interaction.
-- **Mocking**: Mockito is used for mocking dependencies in unit tests.
 
 ## Contributing
 
