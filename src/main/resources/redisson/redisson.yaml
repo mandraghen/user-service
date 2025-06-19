@@ -2,6 +2,6 @@ singleServerConfig:
   username: ${REDIS_USERNAME:-null}
   password: ${REDIS_PASSWORD:-null}
   address: "redis://${REDIS_HOST:-localhost}:${REDIS_PORT:-6379}"
-  nameMapper: !<com.template.sbtemplate.config.redis.PrefixNameMapper> {
+  nameMapper: !<com.smorabito.customer.config.redis.PrefixNameMapper> {
     prefix: 'user-service{ENV:-local}::'
   }
