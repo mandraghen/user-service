@@ -38,5 +38,11 @@ spring:
     virtual:
       enabled: true
   liquibase:
-    default-schema: db_template
+    default-schema: user-service
     contexts: default
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL_SLOW: INFO
