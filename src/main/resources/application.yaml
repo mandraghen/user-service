@@ -9,7 +9,7 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      default_schema: user-service
+      default_schema: users_service
       ddl-auto: none
       naming:
         physical-strategy:threads: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
@@ -38,7 +38,7 @@ spring:
     virtual:
       enabled: true
   liquibase:
-    default-schema: user-service
+    default-schema: users_service
     contexts: default
 
 logging:
