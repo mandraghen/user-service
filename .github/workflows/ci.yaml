@@ -24,6 +24,6 @@ jobs:
     needs: dockerize
     uses: mandraghen/gh-actions-template/.github/workflows/promote.yaml@main
     with:
-      environment: local-k8s
+      environment: local
       app-name: user-service
     secrets: inherit
