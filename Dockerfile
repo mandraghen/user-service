@@ -35,4 +35,6 @@ RUN java -XX:ArchiveClassesAtExit=application.jsa \
 # Switch to the non-root user
 USER appuser
 
+EXPOSE 8040
+
 ENTRYPOINT ["java", "-XX:SharedArchiveFile=application.jsa", "-jar", "application.jar"]
